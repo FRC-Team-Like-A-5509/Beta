@@ -46,10 +46,12 @@ public class HaloDrive extends Command {
     	double forward;
 		double turn;
 		
-		forward = Robot.oi.getleftDriveJoystick().getY();
+		forward = Robot.oi.joystick1.getRawAxis(1);
 		forward = Math.pow(forward, 3);
-		turn = Robot.oi.getleftDriveJoystick().getRawAxis(4);
+		forward *= .75;
+		turn = Robot.oi.joystick1.getRawAxis(4);
 		turn = Math.pow(turn, 3);
+		turn *= .75;
 		Robot.driveTrain.runArcade(forward, turn);
     }
 

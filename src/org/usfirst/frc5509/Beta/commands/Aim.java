@@ -44,7 +44,9 @@ public class Aim extends Command {
     @Override
     protected void execute() {
     	double value;
-    	value = Robot.oi.copilotJoystick.getRawAxis(5);
+    	value = 0;
+    	value +=Robot.oi.joystick1.getRawAxis(2);
+    	value -= Robot.oi.joystick1.getRawAxis(3);
     	
     	if(Math.abs(value) < .5) {
     		value = 0.0;
